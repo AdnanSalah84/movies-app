@@ -46,6 +46,7 @@ def remove_movies(movie_list):
 
         repeat = val.validate_confirm("Do you want to delete another movie? (y/n):  ")
 
+
 # Allows user to search the list of dictionaries for movies using movie name or director name
 # Allows for partial matches
 def search_movies(movie_list):
@@ -58,11 +59,13 @@ def search_movies(movie_list):
 
         repeat = val.validate_confirm("Do you want to search for another movie? (y/n):  ")
 
+
 # Prints a single formatted movie
 def print_movie(movie):
     print(f"\n{'Name:':<10} {movie['name']}"
           f"\n{'Director:':<10} {movie['director']}"
           f"\n{'Year:':<10} {movie['year']}")
+
 
 # Prints a list of formatted movies
 # Gives each movie an index
@@ -70,7 +73,8 @@ def output_movies(movie_list):
     movie_list.sort(key=lambda m: m["name"])
 
     print("\nMovie List:")
-    for index, movie in enumerate(movie_list):
-        print(f"\n{index + 1} -------------------------------")
+    for index, movie in enumerate(movie_list, start=1):
+        # print(f"\n{index} + '-' * 30")
+        print("\n" + str(index) + '-' * 30)
         print_movie(movie)
  

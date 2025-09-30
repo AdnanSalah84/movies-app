@@ -6,6 +6,7 @@ List all movies (with an index number)
 """
 from movie_list import movies
 
+
 def validate_int(question, validation):
     value = input(question)
     while True:
